@@ -36,8 +36,6 @@ plt.show()
 name_list = ["Jack", "Olivia", "Celine", "Winston", "Chloe", "John"]
 name_list2 = ["Jack", "Olivia", "Celine", "Winston", "Chloe", "John"]
 
-names = {"Jack":"Professor", "Olivia":"Doctor", "Celine":"Engineer", 
-             "Winston":"Politician", "Chloe":"Architect", "John":"Officer"}
 for i in name_list2:
     for j in name_list:
         if i != j:
@@ -53,13 +51,14 @@ source = input("Bir köşe adı girin:")
 dfs = netx.dfs_tree(G, source)
 pos_d = netx.spring_layout(dfs)
 print("Verilen köşeden graphın derinlik öncelikli ağacı")
-netx.draw(dfs, pos_d, with_labels = True, node_color = "y")
+netx.draw(dfs, pos_d, with_labels = True, node_color=range(6), 
+          node_size = 1000, cmap=plt.cm.Blues)
 plt.show()
 
 
 bfs = netx.bfs_tree(G, source)
 pos_b = netx.spring_layout(bfs)
 print("Verilen köşeden graphın genişlik öncelikli ağacı")
-netx.draw(bfs, pos_b, with_labels = True, node_color = "b")
+netx.draw(bfs, pos_b, with_labels = True, node_color=range(6), 
+          node_size = 1000, cmap=plt.cm.Reds)
 plt.show()
-
